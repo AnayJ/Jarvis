@@ -149,7 +149,7 @@
 
       .user-bubble {
         width: fit-content;
-        max-width: min(34vw, 300px);
+        max-width: min(34vw, 390px);
         padding: 14px 20px 11px;
         border-radius: 14px 4px 14px 14px;
         background: linear-gradient(90deg, #B6D7FF 0%, #18448F 100%);
@@ -263,7 +263,7 @@
       
       <!-- Top Header Bar -->
       <header class="relative z-30 flex items-center justify-between px-8 pt-6">
-        <h1 class="text-6xl text-[#c7dcf7] font-jarvis-logo tracking-wider uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+        <h1 class="text-4xl text-[#c7dcf7] font-jarvis-logo tracking-wider uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
           JARVIS
         </h1>
         <div class="flex items-center gap-3">
@@ -398,9 +398,7 @@
 
         try {
           controller = new AbortController();
-          //const res = await fetch("http://127.0.0.1:8000/chat", {
-          
-          const res = await fetch("chat", {
+          const res = await fetch("http://127.0.0.1:8000/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: msg }),
