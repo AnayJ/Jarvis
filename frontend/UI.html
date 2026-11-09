@@ -43,8 +43,8 @@
       .bg-ironman-screen {
         position: relative;
         background-image:
-          linear-gradient(180deg, rgba(0, 4, 12, 0.34) 0%, rgba(0, 5, 15, 0.08) 46%, rgba(0, 4, 11, 0.58) 100%),
-          linear-gradient(90deg, rgba(0, 4, 12, 0.32) 0%, rgba(0, 8, 19, 0.02) 50%, rgba(0, 4, 12, 0.3) 100%),
+          linear-gradient(180deg, rgba(0, 7, 17, 0.46) 0%, rgba(0, 8, 20, 0.28) 46%, rgba(0, 5, 14, 0.70) 100%),
+          linear-gradient(90deg, rgba(0, 7, 17, 0.38) 0%, rgba(0, 8, 19, 0.10) 50%, rgba(0, 6, 16, 0.36) 100%),
           url("../assets/arc.jpg");
         background-position: center center;
         background-size: cover;
@@ -59,8 +59,8 @@
         inset: 0;
         pointer-events: none;
         background:
-          linear-gradient(90deg, rgba(4, 25, 49, 0.74) 0%, transparent 18%, transparent 82%, rgba(3, 16, 34, 0.62) 100%),
-          linear-gradient(180deg, rgba(2, 7, 18, 0.42) 0%, transparent 18%, transparent 76%, rgba(1, 6, 16, 0.72) 100%);
+          linear-gradient(90deg, rgba(4, 25, 49, 0.66) 0%, transparent 18%, transparent 82%, rgba(3, 16, 34, 0.58) 100%),
+          linear-gradient(180deg, rgba(2, 7, 18, 0.36) 0%, transparent 18%, transparent 76%, rgba(1, 6, 16, 0.56) 100%);
         mix-blend-mode: multiply;
         opacity: 0.72;
       }
@@ -70,14 +70,17 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
-        background: radial-gradient(ellipse at center, transparent 42%, rgba(0, 2, 8, 0.54) 100%);
+        background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 2, 8, 0.42) 100%);
       }
 
       /* Exact Figma Design Linear Gradient */
       .bg-input-gradient {
-        opacity: 0.60;
-        
-        background: linear-gradient(90deg, #B6D7FF 0%, #18448F 100%);
+        background: linear-gradient(105deg, rgba(20, 32, 47, 0.84), rgba(9, 19, 31, 0.82));
+        border: 1px solid rgba(196, 212, 231, 0.13);
+        box-shadow:
+          inset 0 2px 4px rgba(0, 0, 0, 0.42),
+          inset 0 -2px 4px rgba(0, 0, 0, 0.28),
+          0 5px 14px rgba(0, 0, 0, 0.24);
       }
 
       @keyframes hud-breathe {
@@ -122,7 +125,7 @@
       #messages {
         display: flex;
         flex-direction: column;
-        gap: 18px;
+        gap: 28px;
         min-height: 100%;
         justify-content: flex-end;
       }
@@ -141,8 +144,12 @@
       }
 
       .chat-bubble {
-        border-radius: 14px;
-        box-shadow: 0 7px 18px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(196, 212, 231, 0.12);
+        border-radius: 11px;
+        box-shadow:
+          inset 0 2px 4px rgba(0, 0, 0, 0.34),
+          inset 0 -2px 4px rgba(0, 0, 0, 0.28),
+          0 7px 18px rgba(0, 0, 0, 0.22);
         font-family: "AmericanCaptain", sans-serif;
         line-height: 1.05;
       }
@@ -150,32 +157,33 @@
       .user-bubble {
         width: fit-content;
         max-width: min(34vw, 390px);
-        padding: 14px 20px 11px;
-        border-radius: 14px 4px 14px 14px;
-        background: linear-gradient(90deg, #B6D7FF 0%, #18448F 100%);
-        color: #0b1a2d;
+        min-width: clamp(54px, 11vw, 74px);
+        padding: 10px 15px 9px;
+        border-radius: 11px 4px 11px 11px;
+        background: rgba(48, 61, 75, 0.78);
+        color: #e2e5e9;
       }
 
       .jarvis-bubble {
-        width: fit-content;
-        max-width: min(52vw, 610px);
-        padding: 14px 22px 11px;
-        border-radius: 4px 14px 14px 14px;
-        background: linear-gradient(90deg, #B6D7FF 0%, #18448F 100%);
-        color: #0b1a2d;
+        width: min(52.5vw, 610px);
+        max-width: min(52.5vw, 610px);
+        padding: 10px 15px 9px;
+        border-radius: 4px 11px 11px 11px;
+        background: rgba(67, 80, 89, 0.78);
+        color: #e2e5e9;
       }
 
       .chat-text {
         margin: 0;
-        font-size: clamp(17px, 1.45vw, 23px);
-        letter-spacing: 0.055em;
+        font-size: clamp(18px, 3.2vw, 22px);
+        letter-spacing: 0.035em;
         text-transform: uppercase;
       }
 
       .chat-time {
-        display: block;
+        display: none;
         margin-top: 7px;
-        color: rgba(11, 26, 45, 0.65);
+        color: rgba(226, 229, 233, 0.68);
         font-family: "AmericanCaptain", sans-serif;
         font-size: 12px;
         letter-spacing: 0.06em;
@@ -216,45 +224,119 @@
       }
 
       #heroText {
-        margin-top: 360px;
+        margin-top: 55vh;
         position: relative;
         z-index: 12;
+        max-width: min(90vw, 400px);
+        padding: 16px 43px 15px;
+        border: 1px solid rgba(207, 220, 234, 0.12);
+        border-radius: 17px;
+        background: rgba(12, 23, 36, 0.58);
+        box-shadow:
+          inset 0 2px 4px rgba(0, 0, 0, 0.42),
+          inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+          0 8px 20px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(5px);
       }
 
       #heroText p {
         margin: 0;
-        font-size: 30px;
+        font-size: clamp(16px, 2.8vw, 22px);
         line-height: 1.1;
         letter-spacing: 0.04em;
+        color: #d8d8d8;
       }
 
       .composer-footer {
-        width: min(78.5vw, 1315px);
+        width: min(92vw, 1315px);
         max-width: 1315px;
+        padding: 0 0 14px;
       }
 
       .send-btn {
-        width: 60px;
-        height: 60px;
-        flex-basis: 60px;
-        border-radius: 12px;
-        background: #027da8;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+        width: clamp(40px, 8.8vw, 60px);
+        height: clamp(25px, 8.2vh, 36px);
+        flex-basis: clamp(40px, 8.8vw, 60px);
+        border: 1px solid rgba(0, 127, 169, 0.45);
+        border-radius: 11px;
+        background: rgba(8, 26, 40, 0.65);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.22);
       }
 
       .stop-btn {
-        width: 60px;
-        height: 60px;
-        flex-basis: 60px;
-        border-radius: 12px;
-        background: #681b22;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+        width: clamp(40px, 8.8vw, 60px);
+        height: clamp(25px, 8.2vh, 36px);
+        flex-basis: clamp(40px, 8.8vw, 60px);
+        border: 1px solid rgba(132, 35, 40, 0.42);
+        border-radius: 11px;
+        background: rgba(25, 18, 27, 0.66);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.22);
       }
 
       @media (max-width: 700px) {
-        .composer-footer { width: calc(100% - 24px); }
-        .send-btn,
-        .stop-btn { width: 50px; height: 50px; flex-basis: 50px; }
+        #chat {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+
+        #heroText {
+          margin-top: 56vh;
+        }
+      }
+
+      #chat {
+        max-width: none;
+        padding-left: clamp(18px, 4vw, 64px);
+        padding-right: clamp(18px, 4vw, 64px);
+        padding-top: clamp(48px, 13vh, 88px);
+        padding-bottom: clamp(72px, 30vh, 128px);
+      }
+
+      #messages {
+        gap: clamp(28px, 10vh, 44px);
+        transform: translateY(-4vh);
+      }
+
+      @media (max-height: 500px) {
+        #chat {
+          padding-bottom: clamp(72px, 26vh, 110px);
+        }
+      }
+
+      @media (max-width: 700px) {
+        #chat {
+          padding-right: clamp(42px, 10vw, 68px);
+        }
+
+        .composer-footer {
+          padding-bottom: 23px;
+        }
+      }
+
+      header.relative {
+        padding-left: 24px;
+        padding-right: 32px;
+      }
+
+      header h1.text-4xl {
+        font-size: 52px;
+        line-height: 1;
+      }
+
+      header .font-avengero {
+        font-size: 17px;
+        font-style: normal;
+        color: #d0d0d0;
+      }
+
+      header > .flex {
+        align-self: flex-start;
+        margin-top: 4px;
+      }
+
+      footer.composer-footer {
+        width: min(92vw, 1315px);
+        padding: 0 16px 23px 0;
       }
     </style>
   </head>
@@ -262,13 +344,13 @@
     <div class="relative h-full w-full flex flex-col justify-between overflow-hidden">
       
       <!-- Top Header Bar -->
-      <header class="relative z-30 flex items-center justify-between px-8 pt-6">
+      <header class="relative z-30 flex items-center justify-between px-4 pt-4">
         <h1 class="text-4xl text-[#c7dcf7] font-jarvis-logo tracking-wider uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
           JARVIS
         </h1>
         <div class="flex items-center gap-3">
-          <span class="w-3 h-3 rounded-full bg-[#c7dcf7] shadow-[0_0_8px_#c7dcf7]"></span>
-          <span class="text-2xl tracking-wider text-[#c7dcf7] font-avengero uppercase">
+          <span class="w-2 h-2 rounded-full bg-[#d6b66f] shadow-[0_0_8px_#d6b66f]"></span>
+          <span class="text-base tracking-wider text-[#d0d0d0] font-avengero uppercase">
             ONLINE
           </span>
         </div>
@@ -292,22 +374,22 @@
       <!-- Chat Bubble Container -->
       <main
         id="chat"
-        class="relative z-20 flex-1 overflow-y-auto px-4 sm:px-12 pt-28 pb-32 space-y-4 max-w-6xl mx-auto w-full"
+        class="relative z-20 flex-1 overflow-y-auto px-4 pt-28 pb-32 max-w-6xl mx-auto w-full"
       >
-        <div id="messages" class="space-y-4"></div>
+        <div id="messages"></div>
       </main>
 
       <!-- Input Bar Section -->
-      <footer class="composer-footer relative z-30 w-full max-w-6xl mx-auto px-3 sm:px-4 pb-7">
-        <div class="flex items-center gap-3">
+      <footer class="composer-footer relative z-30 w-full max-w-6xl mx-auto">
+        <div class="flex items-center gap-2">
           <!-- Text Input Field using Figma Gradient -->
-          <div class="flex-1 relative h-[60px] rounded-xl bg-input-gradient shadow-lg shadow-black/40 flex items-center">
+          <div class="flex-1 relative h-[35px] rounded-xl bg-input-gradient flex items-center">
             <input
               id="input"
               type="text"
               placeholder="TYPE A MESSAGE"
               autocomplete="off"
-              class="w-full bg-transparent px-6 text-xl font-jarvis-ui tracking-wider text-[#0b1a2d] placeholder-[#0b1a2d]/70 focus:outline-none uppercase"
+              class="w-full bg-transparent px-3 text-sm font-jarvis-ui tracking-wider text-[#e2e5e9] placeholder-[#c8cbd0]/75 focus:outline-none uppercase"
             />
           </div>
 
@@ -335,7 +417,7 @@
             <img
               src="../assets/stop.png"
               alt="Stop"
-              class="w-6 h-6 object-contain filter invert drop-shadow"
+              class="w-6 h-6 object-contain drop-shadow"
             />
           </button>
         </div>
